@@ -6,7 +6,7 @@ docker build -t dodekeract/com ../
 
 # copy nginx
 
-cp nginx.conf /srv/docker/nginx/sites-enabled/dodekeract.com
+cp nginx.conf /srv/docker/nginx/config/sites-enabled/dodekeract.com
 
 # restart nginx
 
