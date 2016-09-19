@@ -10,7 +10,7 @@
     "copy": "mkdir -p ./build/client && cp source/client/index.html build/client/index.html",
     "start": "node build/server/",
     "transpile-javascript": "babel --presets react,es2015,stage-0 --plugins transform-async-to-generator source -d build",
-    "transpile-style": "node-sass",
+    "transpile-style": "node-sass source/client/styles/main.sass build/client/style.css",
     "watch": "nodemon --watch source/ --watch package.json -e js,json,html,css,sass,scss,png,jpg,jsx --exec \"npm run build --silent && npm run start --silent\""
   },
   "repository": {
