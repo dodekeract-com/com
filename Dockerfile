@@ -1,27 +1,14 @@
-# inherit node
-
-FROM node:argon
-
-# create working directory
+FROM node:6
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-# copy
-
 COPY package.json /usr/src/app/
-COPY source /usr/src/app/source
+RUN npm install
 
-# install
-
-RUN npm install --silent
-
-# build
-
-RUN npm run build --silent
-
-# finalize
-
-EXPOSE 45000
+EXPOSE 8080
 
 CMD [ "npm", "start" ]
+
+COPY . /usr/src/app
+RUN npm run build

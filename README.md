@@ -8,11 +8,11 @@ Obviously needs `docker`.
 
 ### Building
 
-- `docker build -t dodekeract/com .`
+- `npm run docker-build`
 
 ### Running
 
-- `docker run -p 8080:8080 -d dodekeract/com`
+- `npm run docker-start`
 
 ## Development Usage
 
