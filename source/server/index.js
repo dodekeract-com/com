@@ -1,33 +1,33 @@
-// import external
+// region import
+import error from 'spirit-error'
+import http from 'http'
+import route from 'spirit-router'
+import spirit from 'spirit'
 
-import http from 'http';
-import route from 'spirit-router';
-import spirit from 'spirit';
+// internal
+import {render} from './routes/app'
+import {robots} from './routes/static'
+import {html, script} from './routes/file'
+// endregion
 
-// import internal
+// region config
+const {port, host} = {
+	port: process.env.PORT || 1234,
+	host: '0.0.0.0'
+}
+// endregion
 
-import {robots} from './routes';
-
-// config
-
-const {port, address} = {
-	port: process.env.PORT || 8080,
-	address: '0.0.0.0'
-};
-
-// alias
-
-const {node: {adapter}} = spirit;
-
-// routes
-
+// region routes
 const app = route.define([
 	route.get('/robots.txt', robots),
-	route.any('*', () => {return {status: 404, body: 'Not Found', headers: {'content-type': 'text/plain'}}})
-]);
+	route.get('/main.js', script),
+	route.get('/*', html),
+	route.any('*', error.notFound)
+])
+// endregion
 
-// listen
-
-http.createServer(adapter(app)).listen(port, address, () => {
-	console.info(`Listening on http://${address}:${port}`);
-});
+// region start
+http.createServer(spirit.node.adapter(app)).listen({host, port}, () =>
+	console.info(`listening on http://${host}:${port}`)
+)
+// endregion

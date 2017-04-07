@@ -1,0 +1,25 @@
+footer
+	height: 128px
+	background: $color-gray
+	color: $color-neutral
+
+	> div
+		display: flex
+
+		> div
+			flex: 1
+
+			&:nth-child(1)
+				text-align: left
+
+			&:nth-child(2)
+				text-align: center
+
+			&:nth-child(3)
+				text-align: right
+
+@media only screen and (min-width: $break-xl)
+	footer
+		div
+			width: $break-xl
+			margin: 0 auto
