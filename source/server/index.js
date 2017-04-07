@@ -5,7 +5,6 @@ import route from 'spirit-router'
 import spirit from 'spirit'
 
 // internal
-import {render} from './routes/app'
 import {robots} from './routes/static'
 import {html, script} from './routes/file'
 // endregion

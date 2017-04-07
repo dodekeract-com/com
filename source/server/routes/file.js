@@ -1,34 +1,21 @@
 // region import
-
 import {readFileSync as read} from 'fs'
-
-// endregion
-
-// region read
-
-const memory = {
-	style: read(`${__dirname}/../../client/main.css`).toString('utf-8'),
-	script: read(`${__dirname}/../../client/main.js`).toString('utf-8')
-}
-
 // endregion
 
 // region serve
-
-export const style = {
+export const html = {
 	status: 200,
-	body: memory.style,
+	body: read(`${__dirname}/../../client.html`).toString('utf-8'),
 	headers: {
-		'Content-Type': 'text/css; charset=utf-8'
+		'Content-Type': 'text/html; charset=utf-8'
 	}
 }
 
 export const script = {
 	status: 200,
-	body: memory.script,
+	body: read(`${__dirname}/../../client.js`).toString('utf-8'),
 	headers: {
 		'Content-Type': 'application/javascript; charset=utf-8'
 	}
 }
-
 // endregion

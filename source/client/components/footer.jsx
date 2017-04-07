@@ -1,16 +1,16 @@
 // region import
+import {h} from 'hyperapp'
 
-import React from 'react'
-
+// style
+import './footer.sass'
 // endregion
 
 // region Footer
-
 export default () =>
 	<footer>
-		<div>
+		<div class="container">
 			<div>
-				
+
 			</div>
 			<div>div</div>
 			<div>
@@ -18,5 +18,4 @@ export default () =>
 			</div>
 		</div>
 	</footer>
-
 // endregion
