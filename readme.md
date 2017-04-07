@@ -8,11 +8,11 @@ Obviously needs `docker`.
 
 ### Building
 
-- `npm run docker-build`
+- `yarn run docker-build`
 
 ### Running
 
-- `npm run docker-start`
+- `yarn run docker-start`
 
 ## Development Usage
 
@@ -20,16 +20,16 @@ Needs `node` and `npm`.
 
 ### Installing
 
-- `npm run install`
+- `yarn install`
 
 ### Watching
 
-- `npm run watch`
+- `yarn run watch`
 
 ### Building
 
-- `npm run build`
+- `yarn run build`
 
 ### Starting
 
-- `npm run start`
+- `yarn run start`
