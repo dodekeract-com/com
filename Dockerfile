@@ -1,14 +1,15 @@
-FROM node:6
+FROM node:alpine
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/
-RUN npm install
+COPY package.json package.json
+COPY yarn.lock yarn.lock
+RUN yarn install
 
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD ["yarn", "run", "start"]
 
 COPY . /usr/src/app
-RUN npm run build
+RUN yarn run build
